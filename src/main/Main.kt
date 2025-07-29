@@ -47,6 +47,7 @@ class MainApp : Application() {
 }
 
 fun main() {
+    var create = Create("")
     println(MainApp::class.java.getResource("/FXMLmenu/menu.fxml")) // Диагностика
     Application.launch(MainApp::class.java)
 }

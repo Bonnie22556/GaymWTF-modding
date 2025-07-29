@@ -47,25 +47,6 @@
     -fx-effect: null;
 }
 
-.scroll {
-     -fx-background-color: #AEA2BD; /* Основной цвет */
-     -fx-background-radius: 15px;   /* Скругление углов */
-     -fx-border-color: #1D1C1F;
-     -fx-border-width: 2px;
-     -fx-border-radius: 12px;
-     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 1);
-}
-
-.scroll-bar .thumb {
-    -fx-background-color: #F1EDF7; /* основной цвет */
-    -fx-background-radius: 10px;
-}
-
-.scroll-bar .increment-arrow,
-.scroll-bar .decrement-arrow {
-    -fx-background-color: #1D1C1F; /* цвет стрелок */
-}
-
 .text-field {
     -fx-background-color: #F1EDF7; /* Светлый фон для контраста */
     -fx-background-radius: 15px;
@@ -112,4 +93,154 @@
 .text-field:focused > .text-input {
     -fx-highlight-fill: #AEA2BD;   /* Цвет выделения текста */
     -fx-highlight-text-fill: #F1EDF7;
+}
+
+.slider {
+     -fx-background-color: #AEA2BD;
+     -fx-background-radius: 15px;
+     -fx-border-color: #1D1C1F;
+     -fx-border-width: 2px;
+     -fx-border-radius: 9px;
+     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 1);
+
+     /* Основная полоса (track) */
+     -slider-track-color: #E0E0E0;
+     -slider-filled-track-color: #7D6A95; /* Цвет заполненной части */
+
+     /* Толщина основной полосы */
+     -slider-track-height: 4px; /* Тонкая полоса */
+     /* Скругление основной полосы */
+     -slider-track-radius: 5px;
+     /* Бегунок (thumb) */
+     -slider-thumb-color: #F1EDF7;
+     -slider-thumb-radius: 8px; /* Круглый бегунок */
+     -slider-thumb-border-color: #1D1C1F;
+     -slider-thumb-border-width: 2px;
+}
+
+/* Стиль для бегунка */
+/* Стиль для слайдера - исправленная версия */
+.slider {
+    -slider-track-color: #E0E0E0;
+    -slider-filled-track-color: #7D6A95;
+    -slider-thumb-color: #F1EDF7;
+    -slider-thumb-border-color: #1D1C1F;
+}
+
+.slider .track {
+    -fx-background-color: -slider-track-color;
+    -fx-background-radius: 5px;  /* Явное значение вместо переменной */
+    -fx-pref-height: 6px;        /* Тонкая полоса */
+    -fx-min-height: 4px;
+    -fx-max-height: 4px;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.slider .filled-track {
+    -fx-background-color: -slider-filled-track-color;
+    -fx-background-radius: 5px;  /* Явное значение */
+    -fx-pref-height: 4px;
+    -fx-min-height: 4px;
+    -fx-max-height: 4px;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.slider .thumb {
+    -fx-background-color: -slider-thumb-color;
+    -fx-background-radius: 8px;  /* Явное значение */
+    -fx-border-color: -slider-thumb-border-color;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;      /* Явное значение */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 1);
+    -fx-pref-width: 16px;
+    -fx-pref-height: 16px;
+    -fx-min-width: 16px;
+    -fx-min-height: 16px;
+    -fx-max-width: 16px;
+    -fx-max-height: 16px;
+    -fx-shape: null;
+}
+
+.slider .thumb:hover {
+    -fx-background-color: #FFFFFF;
+}
+
+.slider .thumb:pressed {
+    -fx-background-color: #E6E0EF;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+/* Вертикальный слайдер */
+.slider:vertical .track {
+    -fx-pref-width: 4px;
+    -fx-min-width: 4px;
+    -fx-max-width: 4px;
+}
+
+.slider:vertical .filled-track {
+    -fx-pref-width: 4px;
+    -fx-min-width: 4px;
+    -fx-max-width: 4px;
+}
+
+
+
+.table-view {
+    -fx-background-color: #F1EDF7;
+    -fx-background-radius: 15px;
+    -fx-border-radius: 10px;
+    -fx-border-color: #1D1C1F;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 5, 0, 0, 1);
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #AEA2BD;
+    -fx-background-radius: 13px 13px 0 0;
+    -fx-border-radius: 13px 13px 0 0;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.table-view .table-row-cell:filled:selected,
+.table-view .table-row-cell:focused:selected {
+    -fx-background-color: #E6E0EF; /* Цвет выделенной строки */
+    -fx-text-fill: #1D1C1F; /* Цвет текста выделенной строки */
+}
+
+.table-view .table-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: #1D1C1F; /* Цвет текста ячеек */
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}
+
+.table-view:focused {
+    -fx-background-insets: 0;
+    -fx-effect: null;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #AEA2BD;
+    -fx-background-radius: 8px 8px 0 0;
+    -fx-border-radius: 10px 10px 0 0;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.10), 4, 0, 0, 1);
+}
+
+.table-view .column-header,
+.table-view .column-header .label {
+    -fx-background-color: transparent;
+    -fx-text-fill: #F1EDF7;
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-effect: null;
 }
