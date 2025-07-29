@@ -1,0 +1,115 @@
+.rounded-box {
+    -fx-fill: #2c2b30;
+    -fx-background-radius: 20px;
+    -fx-stroke: #8b8996;
+    -fx-arc-width: 20px;
+    -fx-arc-height: 20px;
+    -fx-stroke-width: 2px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 1);
+}
+
+.button {
+    -fx-wrap-text: true;
+    -fx-background-color: #AEA2BD; /* Основной цвет */
+    -fx-background-radius: 15px;   /* Скругление углов */
+    -fx-border-color: #1D1C1F;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+    -fx-text-fill: #F1EDF7;          /* Цвет текста */
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-padding: 8px 16px;         /* Внутренние отступы (верт/гориз) */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 1); /* Тень */
+    -fx-cursor: hand;              /* Изменение курсора при наведении */
+    -fx-background-insets: 0;      /* Важно! Убираем внутренние отступы фона */
+    -fx-border-insets: 0;          /* Важно! Убираем внутренние отступы границы */
+    -fx-focus-color: transparent;  /* Убираем цвет фокуса */
+    -fx-faint-focus-color: transparent; /* Убираем вторичный цвет фокуса */
+}
+
+/* Стиль при наведении */
+.button:hover {
+    -fx-background-color: #7D6A95; /* Измененный цвет */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 8, 0, 0, 2); /* Усиленная тень */
+}
+
+/* Стиль при нажатии */
+.button:pressed {
+    -fx-background-color: #67577A; /* Темный цвет */
+    -fx-translate-y: 1px;         /* Легкое смещение вниз */
+}
+
+/* Стиль для отключенной кнопки */
+.button:disabled {
+    -fx-background-color: #cccccc;
+    -fx-text-fill: #777777;
+    -fx-effect: null;
+}
+
+.scroll {
+     -fx-background-color: #AEA2BD; /* Основной цвет */
+     -fx-background-radius: 15px;   /* Скругление углов */
+     -fx-border-color: #1D1C1F;
+     -fx-border-width: 2px;
+     -fx-border-radius: 12px;
+     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 1);
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #F1EDF7; /* основной цвет */
+    -fx-background-radius: 10px;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-background-color: #1D1C1F; /* цвет стрелок */
+}
+
+.text-field {
+    -fx-background-color: #F1EDF7; /* Светлый фон для контраста */
+    -fx-background-radius: 15px;
+    -fx-border-color: #1D1C1F;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;       /* На 2px меньше фонового */
+    -fx-text-fill: #1D1C1F;        /* Темный текст для читаемости */
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-padding: 10px 15px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 1);
+    -fx-background-insets: 0;
+    -fx-border-insets: 0;
+    -fx-prompt-text-fill: #8b8996; /* Цвет подсказки */
+}
+
+/* Стиль для текста подсказки (placeholder) */
+.text-field .prompt-text {
+    -fx-font-style: italic;
+    -fx-opacity: 0.8;
+}
+
+/* Стиль при фокусе */
+.text-field:focused {
+    -fx-border-color: #7D6A95;     /* Акцентный цвет как у кнопок */
+    -fx-border-width: 2.5px;
+    -fx-effect: dropshadow(three-pass-box, rgba(125, 106, 149, 0.3), 5, 0, 0, 2);
+}
+
+/* Стиль при наведении */
+.text-field:hover {
+    -fx-background-color: #E6E0EF; /* Слегка темнее фона */
+}
+
+/* Стиль для отключенного поля */
+.text-field:disabled {
+    -fx-background-color: #1D1C1F;
+    -fx-text-fill: #777777;
+    -fx-border-color: #cccccc;
+    -fx-effect: null;
+}
+
+/* Убираем выделение при фокусе */
+.text-field:focused > .text-input {
+    -fx-highlight-fill: #AEA2BD;   /* Цвет выделения текста */
+    -fx-highlight-text-fill: #F1EDF7;
+}
