@@ -8,8 +8,9 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #1D1C1F;" stylesheets="@../styles.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.main.controller.MainController">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #1D1C1F;" stylesheets="@../styles.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.main.controller.TileController">
    <children>
+      <TextField fx:id="windowType" layoutX="42.0" layoutY="25.0" prefHeight="40.0" prefWidth="64.0" styleClass="text-input" text="tiles" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="370.0" layoutX="15.0" layoutY="15.0" stroke="BLACK" strokeType="INSIDE" styleClass="rounded-box" width="570.0" />
       <Label layoutX="185.0" layoutY="24.0" text="GaymWTF Mods Generator" textFill="#dbd1eb" AnchorPane.topAnchor="24.0">
          <font>
@@ -18,8 +19,8 @@
       </Label>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="303.0" layoutX="32.0" layoutY="65.0" stroke="BLACK" strokeType="INSIDE" styleClass="rounded-box" width="142.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="250.0" layoutX="196.0" layoutY="66.0" stroke="BLACK" strokeType="INSIDE" styleClass="rounded-box" width="375.0" />
-      <Button fx:id="inject" layoutX="471.0" layoutY="320.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="100.0" text="вставить" />
-      <Button fx:id="reload" layoutX="196.0" layoutY="320.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="179.0" text="Вставить установщик / Очистить геймвтф ">
+      <Button fx:id="inject" layoutX="471.0" layoutY="320.0" mnemonicParsing="false" onAction="#inject" prefHeight="52.0" prefWidth="100.0" text="вставить" />
+      <Button fx:id="reload" layoutX="196.0" layoutY="320.0" mnemonicParsing="false" onAction="#reloadInMenu" prefHeight="52.0" prefWidth="179.0" text="Вставить установщик / Очистить геймвтф ">
          <font>
             <Font size="11.0" />
          </font>
@@ -40,7 +41,7 @@
             <Font size="11.0" />
          </font>
       </Button>
-      <TextField fx:id="gameSRC1" layoutX="209.0" layoutY="120.0" prefHeight="25.0" prefWidth="350.0" promptText="Название тайла" styleClass="text-input" />
+      <TextField fx:id="tileName" layoutX="209.0" layoutY="120.0" prefHeight="25.0" prefWidth="350.0" promptText="Название тайла" styleClass="text-input" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="100.0" layoutX="438.0" layoutY="191.0" stroke="BLACK" strokeType="INSIDE" styleClass="rounded-box" width="100.0" />
       <TextField fx:id="path_text" alignment="CENTER" editable="false" layoutX="211.0" layoutY="197.0" prefHeight="35.0" prefWidth="200.0" promptText="Путь к текстуре" styleClass="text-input" />
       <ImageView fx:id="texture_preview" fitHeight="64.0" fitWidth="64.0" layoutX="456.0" layoutY="209.0" pickOnBounds="true" preserveRatio="true" />

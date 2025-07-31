@@ -4,7 +4,7 @@ import java.io.File
 
 class Create(val srcPath: String) {
 
-    inner class Updater(mainRSPath: String = "${this@Create.srcPath}\\main.main.rs") {
+    inner class Updater(mainRSPath: String = "${this@Create.srcPath}/main.rs") {
         private val file = File(mainRSPath)
 
         private fun updMAIN(newCont: String, endMarker: String) {
@@ -39,9 +39,9 @@ class Create(val srcPath: String) {
         ) = updMAIN(newCont, endMarker)
     }
 
-    inner class Creator(contentType: String, val contentName: String, filePath: String = "${this@Create.srcPath}\\${contentType}\\${contentName.lowercase()}.rs") {
+    inner class Creator(contentType: String, val contentName: String, filePath: String = "${this@Create.srcPath}/${contentType}/${contentName.lowercase()}.rs") {
         private val file = File(filePath)
-        private var mod = File("${this@Create.srcPath}\\${contentType}\\mod.rs")
+        private var mod = File("${this@Create.srcPath}/${contentType}/mod.rs")
 
         fun biomeAdd(biomeName: String = contentName,
                      minHeight: Double = 0.0,
@@ -216,11 +216,11 @@ impl Object for ${objectName} {
 }
 
 
-fun Reload(srcPath: String) {
-    val main = File("${srcPath}\\main.main.rs")
-    val biomeMod = File("${srcPath}\\biomes\\mod.rs")
-    val objectMod = File("${srcPath}\\objects\\mod.rs")
-    val tileMod = File("${srcPath}\\tiles\\mod.rs")
+fun reload(srcPath: String) {
+    val main = File("${srcPath}/main.rs")
+    val biomeMod = File("${srcPath}/biomes/mod.rs")
+    val objectMod = File("${srcPath}/objects/mod.rs")
+    val tileMod = File("${srcPath}/tiles/mod.rs")
     main.writeText("""pub mod biomes;
 pub mod objects;
 pub mod player;
@@ -309,8 +309,8 @@ pub struct WorldGenInfo {
     pub seed: u32,
 }
 
-#[macroquad::main.main("gaymwtf")]
-async fn main.main() -> anyhow::Result<()> {
+#[macroquad::main("gaymwtf")]
+async fn main() -> anyhow::Result<()> {
     let mut current_menu: Box<dyn Menu> = Box::new(StartMenu::new());
     let mut batch = DrawBatch::new();
     loop {
